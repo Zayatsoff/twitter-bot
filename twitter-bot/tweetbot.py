@@ -3,6 +3,8 @@ import torch
 import tweepy
 import json
 
+# TODO: fine-tune model
+
 
 class TweetBot:
     def __init__(
