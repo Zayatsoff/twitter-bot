@@ -38,11 +38,16 @@ class TweetBot:
         split_output = output[0]["generated_text"].split(".", 1)[0] + "."
         return split_output
 
-    def create_tweet(self, prompt="Fun fact:", key_loc="key.JSON"):
+    def post_tweet(self, text="Hello", key_loc="key.JSON"):
+        api = self.auth_twitter(key_loc)
+        api.update_status(status=text)
+        print(f"Tweeted: {text}")
+
+    def post_ai_tweet(self, prompt="Fun fact:", key_loc="key.JSON"):
         tweet = self.generate(prompt)
         api = self.auth_twitter(key_loc)
         api.update_status(status=tweet)
-        print(f"Generated text: {tweet}")
+        print(f"Tweeted: {tweet}")
 
     def auth_twitter(self, key_loc):
         # Open JSON file
