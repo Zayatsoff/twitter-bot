@@ -3,7 +3,7 @@ import torch
 import tweepy
 import json
 
-# TODO: fine-tune model
+# TODO: *fine-tune model    *add image generation
 
 
 class TweetBot:
